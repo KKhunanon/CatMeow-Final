@@ -209,7 +209,31 @@ public class GameManager_SG : MonoBehaviour
 
     }
     public void DecreaseeDog() { //-------Decrease dog by one
-      
+        if (noItemA == 1)
+        {
+            dogs[0].gameObject.SetActive(false);
+            //dogs[4].transform.position = new Vector3(-0.38f, -14.47f, -5f);
+        }
+        else if (noItemA == 2)
+        {
+            dogs[1].gameObject.SetActive(false);
+            //dogs[5].transform.position = new Vector3(-0.38f, -14.47f, -5f);
+        }
+        else if (noItemA == 3)
+        {
+            dogs[2].gameObject.SetActive(false);
+            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
+        }
+        else if (noItemA == 4)
+        {
+            dogs[3].gameObject.SetActive(false);
+            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
+        }
+        else if (noItemA == 5)
+        {
+            dogs[4].gameObject.SetActive(false);
+            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
+        }
     }
     //---------------------------------------------------------
     private bool CheckingAllFoods()
