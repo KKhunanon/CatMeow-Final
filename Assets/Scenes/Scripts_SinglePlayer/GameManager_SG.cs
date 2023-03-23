@@ -154,7 +154,6 @@ public class GameManager_SG : MonoBehaviour
         ItemAEaten = true;
         noItemA += 1;
         DecreaseeDog();
-        Invoke("ResetEnergyAA", 8.0f);
         itemA.gameObject.SetActive(false);
     }
 
@@ -165,7 +164,6 @@ public class GameManager_SG : MonoBehaviour
         ItemBEaten = true;
         noItemB += 1;
         IncreaseDog();
-        Invoke("ResetEnergyBB", 8.0f);
         itemB.gameObject.SetActive(false);
     }
     public void ItemCCEaten(ItemC itemC)
@@ -173,7 +171,6 @@ public class GameManager_SG : MonoBehaviour
         SoundManager_SG.PlaySound("CatEnergyEaten");
         NormalFoodEaten(itemC);
         HoldTheDog();
-        Invoke("ResetEnergyCC", 8.0f);
         itemC.gameObject.SetActive(false);
     }
     //-------------------Function-For-EachItem-----------------
@@ -183,9 +180,9 @@ public class GameManager_SG : MonoBehaviour
         {
             dogs[i].movement.speed = 0;
         }
-        Invoke("DelayDog", 3.0f);
+        Invoke("ResetSpeedOfDog", 3.0f);
     }
-    void DelayDog() {
+    void ResetSpeedOfDog() {
         for (int i = 0; i < this.dogs.Length; i++)
         {
             dogs[i].movement.speed = 5;
@@ -212,27 +209,22 @@ public class GameManager_SG : MonoBehaviour
         if (noItemA == 1)
         {
             dogs[0].gameObject.SetActive(false);
-            //dogs[4].transform.position = new Vector3(-0.38f, -14.47f, -5f);
         }
         else if (noItemA == 2)
         {
             dogs[1].gameObject.SetActive(false);
-            //dogs[5].transform.position = new Vector3(-0.38f, -14.47f, -5f);
         }
         else if (noItemA == 3)
         {
             dogs[2].gameObject.SetActive(false);
-            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
         }
         else if (noItemA == 4)
         {
             dogs[3].gameObject.SetActive(false);
-            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
         }
         else if (noItemA == 5)
         {
             dogs[4].gameObject.SetActive(false);
-            //dogs[6].transform.position = new Vector3(-0.38f, -14.47f, -5f);
         }
     }
     //---------------------------------------------------------

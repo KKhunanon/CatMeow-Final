@@ -8,6 +8,7 @@ public class Cat_SG : MonoBehaviour
 
     public string direction = "right";
     public Rigidbody2D rb;
+    public Movement movement;
     public FixedJoystick Joystick;
     public float speed;
 
@@ -29,6 +30,33 @@ public class Cat_SG : MonoBehaviour
         {
             this.transform.Rotate(Vector3.up * 180);
             direction = "right";
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            this.movement.SetDirection(Vector2.up);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            this.movement.SetDirection(Vector2.down);
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (direction == "right")
+            {
+                this.transform.Rotate(Vector3.up * 180);
+                direction = "left";
+            }
+            this.movement.SetDirection(Vector2.left);
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (direction == "left")
+            {
+                this.transform.Rotate(Vector3.up * 180);
+                direction = "right";
+            }
+            this.movement.SetDirection(Vector2.right);
         }
     }
 
