@@ -10,8 +10,8 @@ public class GameManager_SG : MonoBehaviour
     public Cat_SG cat;
     public Transform foods;
     public Text Score_txt;
-    //-------New adding--------
     public bool energyEaten;
+    //-------New adding--------
     public bool ItemAEaten;
     public bool ItemBEaten;
     private int noItemA = 0;

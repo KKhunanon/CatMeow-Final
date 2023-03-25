@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ItemB : NormalFood_SG
 {
     public int duration = 8;
-    //public GameObject Dog_sub;
 
     protected override void Eat()
     {
